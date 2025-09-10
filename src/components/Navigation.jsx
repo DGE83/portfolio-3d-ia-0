@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, Cube, Palette, User, Mail, Briefcase } from 'lucide-react'
+import { Menu, X, Box, Palette, User, Mail, Briefcase } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const Navigation = () => {
@@ -16,7 +16,7 @@ const Navigation = () => {
 
   const navItems = [
     { name: 'Accueil', href: '#home', icon: User },
-    { name: 'Modélisation 3D', href: '#modeling', icon: Cube },
+    { name: 'Modélisation 3D', href: '#modeling', icon: Box },       // <- Box au lieu de Cube
     { name: 'Visuels IA', href: '#ai-art', icon: Palette },
     { name: 'Services', href: '#services', icon: Briefcase },
     { name: 'Contact', href: '#contact', icon: Mail },
@@ -24,9 +24,7 @@ const Navigation = () => {
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
+    if (element) element.scrollIntoView({ behavior: 'smooth' })
     setIsOpen(false)
   }
 
@@ -101,4 +99,3 @@ const Navigation = () => {
 }
 
 export default Navigation
-
