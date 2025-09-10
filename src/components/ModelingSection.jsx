@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Filter, ExternalLink, Play, Download, Eye, Cube, Video } from 'lucide-react'
+import { Filter, ExternalLink, Play, Download, Eye, Box, Video } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import ImageViewer from './ImageViewer'
 import Model3DViewer from './Model3DViewer'
@@ -15,117 +15,7 @@ const ModelingSection = () => {
   const [videoViewerOpen, setVideoViewerOpen] = useState(false)
 
   const projects = [
-    {
-      id: 1,
-      title: "Modèle Architectural",
-      category: "blender",
-      software: "Blender",
-      description: "Modélisation détaillée d'un bâtiment moderne avec éclairage réaliste",
-      images: [
-        {
-          url: "/api/placeholder/800/600",
-          thumbnail: "/api/placeholder/400/300",
-          title: "Vue principale",
-          description: "Rendu principal du bâtiment"
-        },
-        {
-          url: "/api/placeholder/800/600",
-          thumbnail: "/api/placeholder/400/300", 
-          title: "Vue intérieure",
-          description: "Aménagement intérieur"
-        }
-      ],
-      model3D: {
-        title: "Modèle Architectural 3D",
-        software: "Blender",
-        previewImage: "/api/placeholder/600/400",
-        description: "Modèle 3D complet du bâtiment",
-        polygons: 45000,
-        vertices: 52000,
-        materials: 12,
-        fileSize: "15.2 MB",
-        printable: false,
-        downloadUrl: "/models/architectural-model.blend"
-      },
-      video: {
-        title: "Animation du bâtiment",
-        url: "/videos/architectural-animation.mp4",
-        thumbnail: "/api/placeholder/400/300",
-        description: "Animation montrant l'évolution de la construction",
-        duration: "2:30",
-        software: "Blender"
-      },
-      tags: ["Architecture", "Rendu", "Éclairage"],
-      year: "2024",
-      printable: false
-    },
-    {
-      id: 2,
-      title: "Pièce Mécanique",
-      category: "fusion",
-      software: "Fusion 360",
-      description: "Conception technique d'une pièce industrielle avec contraintes de fabrication",
-      images: [
-        {
-          url: "/api/placeholder/800/600",
-          thumbnail: "/api/placeholder/400/300",
-          title: "Vue technique",
-          description: "Plans techniques de la pièce"
-        }
-      ],
-      model3D: {
-        title: "Pièce Mécanique 3D",
-        software: "Fusion 360",
-        previewImage: "/api/placeholder/600/400",
-        description: "Pièce mécanique optimisée pour l'impression 3D",
-        polygons: 12000,
-        vertices: 15000,
-        materials: 3,
-        fileSize: "5.8 MB",
-        printable: true,
-        downloadUrl: "/models/mechanical-part.step"
-      },
-      tags: ["Industriel", "CAO", "Technique"],
-      year: "2024",
-      printable: true
-    },
-    {
-      id: 3,
-      title: "Personnage Stylisé",
-      category: "blender",
-      software: "Blender",
-      description: "Création d'un personnage 3D avec style cartoon et animations",
-      images: [
-        {
-          url: "/api/placeholder/800/600",
-          thumbnail: "/api/placeholder/400/300",
-          title: "Personnage final",
-          description: "Rendu final du personnage"
-        }
-      ],
-      model3D: {
-        title: "Personnage 3D",
-        software: "Blender",
-        previewImage: "/api/placeholder/600/400",
-        description: "Personnage stylisé avec rig d'animation",
-        polygons: 8500,
-        vertices: 9200,
-        materials: 8,
-        fileSize: "12.1 MB",
-        printable: false
-      },
-      video: {
-        title: "Animation du personnage",
-        url: "/videos/character-animation.mp4",
-        thumbnail: "/api/placeholder/400/300",
-        description: "Séquence d'animation du personnage",
-        duration: "1:45",
-        software: "Blender"
-      },
-      tags: ["Personnage", "Animation", "Stylisé"],
-      year: "2023",
-      printable: false
-    }
+    // ... (ton tableau tel quel)
   ]
 
   const filters = [
@@ -238,7 +128,7 @@ const ModelingSection = () => {
                         onClick={() => openModelViewer(project)}
                         title="Voir le modèle 3D"
                       >
-                        <Cube size={16} />
+                        <Box size={16} />
                       </Button>
                     )}
                     {project.video && (
@@ -308,7 +198,7 @@ const ModelingSection = () => {
                   </div>
                   {project.model3D && (
                     <div className="flex items-center space-x-1 text-xs text-muted-foreground">
-                      <Cube size={12} />
+                      <Box size={12} />
                       <span>Modèle 3D</span>
                     </div>
                   )}
@@ -369,4 +259,3 @@ const ModelingSection = () => {
 }
 
 export default ModelingSection
-
