@@ -6,7 +6,7 @@ import path from 'path'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),tailwindcss()],
-  base: '/portfolio-3d-ia/', // Changez ceci par le nom de votre repository GitHub
+  base: '/portfolio-3d-ia-0/', // Changez ceci par le nom de votre repository GitHub
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
